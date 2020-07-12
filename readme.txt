@@ -21,10 +21,14 @@ https://sourceforge.net/projects/eightsoundsusb/files/Schematics/8SoundsUSB-MIC_
 Wires and cables should be shielded to minimize unwanted noise.
 I don't know if a AGC circuit is a good idea to implement,to avoid overloading the circuit.
 Automatic gain control (AGC), is a closed-loop feedback regulating circuit in an amplifier or chain of amplifiers, the purpose of which is to maintain a suitable signal amplitude at its output, despite variation of the signal amplitude at the input. The average or peak output signal level is used to dynamically adjust the gain of the amplifiers, enabling the circuit to work satisfactorily with a greater range of input signal levels.
+Perhaps also a tilt sensor, if multiple sensor pods is used as the position of the pods will change in respect to each other and the speed the array is towed at.
+Passive towed hydrophone arrays in submarines monitors the bend and sag automatically.
 
 If those are a suitable distance and 45° degrees apart from each other in a flat circular array with 8  piezoelectric sensors, and hooked up to signal inputs with synchronised sampling for each piezoelectric element it should be possible to run a software called ManyEars or ODAS.
 https://github.com/introlab/manyears
 https://github.com/introlab/odas
+Software demonstration:
+https://youtu.be/n7y2rLAnd5I
 
 About the software:
 That software is used in robotics to to perform sound source localization, tracking, separation and post-filtering. It can do elevation ( +90 to -90 degrees) and azimuth ( +180 to -180 degrees). 
