@@ -19,13 +19,15 @@ The preamplifier circuit mentioned below can be modified with a opamp to serve a
 A preamplifier for a microphone, it will need a buffer circuit powered by VCC, the bias circuit ( R1,C2, R5 on the preamp circuit )will need to be deleted as it is for electret microphone. The piezoelectric elements negative side needs to be directly grounded.The opamps output connects to +IN. Schematic:
 https://sourceforge.net/projects/eightsoundsusb/files/Schematics/8SoundsUSB-MIC_REV2.0.pdf/download
 Wires and cables should be shielded to minimize unwanted noise.
+I don't know if a AGC circuit is a good idea to implement,to avoid overloading the circuit.
+Automatic gain control (AGC), is a closed-loop feedback regulating circuit in an amplifier or chain of amplifiers, the purpose of which is to maintain a suitable signal amplitude at its output, despite variation of the signal amplitude at the input. The average or peak output signal level is used to dynamically adjust the gain of the amplifiers, enabling the circuit to work satisfactorily with a greater range of input signal levels.
 
 If those are a suitable distance and 45° degrees apart from each other in a flat circular array with 8  piezoelectric sensors, and hooked up to signal inputs with synchronised sampling for each piezoelectric element it should be possible to run a software called ManyEars or ODAS.
 https://github.com/introlab/manyears
 https://github.com/introlab/odas
 
 About the software:
-That software is used in robotics to to perform sound source localization, tracking, separation and post-filtering. It can do elevation ( +90 to -90 degrees) and azimuth ( +180 to -180 degrees) . 
+That software is used in robotics to to perform sound source localization, tracking, separation and post-filtering. It can do elevation ( +90 to -90 degrees) and azimuth ( +180 to -180 degrees). 
 
 It cannot do distance calculations, but it should be possible to implement that in the software if hydrophone pods with enough distance between them are used and sensors as described below is fitted.
 Approximate values for fresh water and seawater, respectively, at atmospheric pressure are 1450 around 1500 m/s.
