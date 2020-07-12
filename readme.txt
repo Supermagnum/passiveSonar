@@ -13,9 +13,10 @@ It's sensitivity is around -150 to -160 dB-V//microPa.
 The problem is that the opamp used in the mentioned document is not suitable for the voltage a USB connector delivers.
 Also, the hydrophone will need to be modified so it doesn't rotate. A suitable long enough fin with a weight on the end could be the best solution.
 
+Compined preamplifier and buffer circuit, one per crystal:
 The preamplifier circuit mentioned below can be modified with a opamp to serve as a impedance buffer. Suitable opamps for single +5Volt is: OPA365,OPA1671,AD8613,TS922
  - low noise, good BW is important. 
-A preamplifier for 8 microphones, it will need a buffer circuit powered by VCC, the bias circuit ( R1,C2, R5 on the preamp circuit )will need to be deleted as it is for electret microphone. The piezoelectric elements negative side needs to be directly grounded. Schematic:
+A preamplifier for a microphone, it will need a buffer circuit powered by VCC, the bias circuit ( R1,C2, R5 on the preamp circuit )will need to be deleted as it is for electret microphone. The piezoelectric elements negative side needs to be directly grounded.The opamps output connects to +IN. Schematic:
 https://sourceforge.net/projects/eightsoundsusb/files/Schematics/8SoundsUSB-MIC_REV2.0.pdf/download
 Wires and cables should be shielded to minimize unwanted noise.
 
