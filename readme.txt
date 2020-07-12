@@ -1,5 +1,5 @@
 A write up on what is needed to build a passive towed hydrophone array that can do:
-Track sound sources with elevation ( +90 to -90 degrees) and azimuth ( +180 to -180 degrees). 
+Track and isolate sound sources with elevation ( +90 to -90 degrees) and azimuth ( +180 to -180 degrees). 
 
 Hardware:
 It will need multiple passive piezoelectric sensors.
