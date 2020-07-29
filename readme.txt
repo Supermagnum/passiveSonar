@@ -11,7 +11,6 @@ The best piezoelectric sensors for listening is based on Aluminum Nitride and mo
 A document on how to build a basic, single element towed hydrophone: https://swfsc.noaa.gov/uploadedFiles/Divisions/PRD/Programs/Coastal_Marine_Mammal/Barlow%20et%20al%202008%20HydrophoneConstruction_TM-417.pdf
 It's sensitivity is around -150 to -160 dB-V//microPa. 
 The problem is that the opamp used in the mentioned document is not suitable for the voltage a USB connector delivers.
-Also, the hydrophone will need to be modified so it doesn't rotate. A suitable long enough fin with a weight on the end could be the best solution.
 
 Compined preamplifier and buffer circuit, one per crystal:
 The problem with piezoelectric and contact mics is that they are not well matched to typical audio inputs. 
@@ -20,17 +19,7 @@ Because the piezo disc has a very high impedance (1 MΩ typical), it should be b
 
 The best piezoelectric sensors for listening is based on Aluminum Nitride and molybdenum. PZT-5 also known as SensorTech BM500,Channel 5500,Morgan PZT5A1 is widely used and more easily obtained. 
 
-The diodes are there to avoid overloading the circuit if it is dropped or bumped in to something hard. It's sort of a cheap and easy signal limiter circuit.
-
-NOAA technical memorandum NMFS 2008NOAA-TM-NMFS-SWFSC-417 also known as:
-A guide to constructing hydrophones and hydrophone arrays for monitoring marine mammal vocalizations,
-describes how to build a single crystal hydrophone.
-
-It's sensitivity is around -150 to -160 dB-V//microPa. 
-
-The problem is that the opamp used in the mentioned document is not suitable for the +5Volt DC voltage a USB connector delivers.
-
-Suitable opamps for single +5Volt is a LME49724.
+A suitable opamp for single +5Volt is a LME49724.
 
 Also, the hydrophone will need to be modified so it doesn't rotate, or a MPU-6050 added per array to detect X and Y axis values. A GY-521 breakout board could be useful in those regards or a MPU-9150 Accelerometer + Gyro + Magnetometer (compass).
 Passive towed hydrophone arrays in submarines monitors the bend and sag automatically.
