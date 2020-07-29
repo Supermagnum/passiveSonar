@@ -4,7 +4,6 @@ Track and isolate sound sources with elevation ( +90 to -90 degrees) and azimuth
 Hardware:
 It will need multiple passive piezoelectric sensors.
 Some information on piezoelectric elements:
-The problem with piezoelectric elements is that they are not well matched to typical audio inputs. The reason why these devices often sound "tinny" is because the piezo sensor presents its signal through a series capacitance which is small, typically 15nF or less. When wired to a normal 50 kilohm line input this forms a 200Hz high-pass filter, which eliminates the bass.  Because the piezo element has a very high impedance (1 MΩ typical), it should be buffered to avoid possible impedance mismatch with an existing audio system. 
 
 The best piezoelectric sensors for listening is based on Aluminum Nitride and molybdenum. PZT-5 also known as SensorTech BM500,Channel 5500,Morgan PZT5A1 is widely used and possibly easier to find.
 
