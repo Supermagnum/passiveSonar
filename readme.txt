@@ -14,11 +14,38 @@ The problem is that the opamp used in the mentioned document is not suitable for
 Also, the hydrophone will need to be modified so it doesn't rotate. A suitable long enough fin with a weight on the end could be the best solution.
 
 Compined preamplifier and buffer circuit, one per crystal:
-The preamplifier circuit mentioned below can be modified with a opamp to serve as a impedance buffer. Suitable opamps for single +5Volt is: OPA365,OPA1671,AD8613,TS922
- - low noise, good BW is important. 
-A preamplifier for a microphone, it will need a buffer circuit powered by VCC, the bias circuit ( R1,C2, R5 on the preamp circuit )will need to be deleted as it is for electret microphone. The piezoelectric elements negative side needs to be directly grounded.The opamps output connects to +IN. Schematic:
-https://sourceforge.net/projects/eightsoundsusb/files/Schematics/8SoundsUSB-MIC_REV2.0.pdf/download
-Wires and cables should be shielded to minimize unwanted noise.
+The problem with piezoelectric and contact mics is that they are not well matched to typical audio inputs. 
+The reason why these devices often sound tinny is because the piezo sensor presents its signal through a series capacitance which is small, typically 15nF or less. When wired to a normal 50 kilohm line input this forms a 200Hz high-pass filter, which eliminates the bass. 
+Because the piezo disc has a very high impedance (1 MΩ typical), it should be buffered to avoid possible impedance mismatch with an existing audio system. This circuit acts as a impedance buffer, and some amplification does not hurt as long as it is around 40dB. 
+
+The best piezoelectric sensors for listening is based on Aluminum Nitride and molybdenum. PZT-5 also known as SensorTech BM500,Channel 5500,Morgan PZT5A1 is widely used and more easily obtained. 
+
+The diodes are there to avoid overloading the circuit if it is dropped or bumped in to something hard. It's sort of a cheap and easy signal limiter circuit.
+
+NOAA technical memorandum NMFS 2008NOAA-TM-NMFS-SWFSC-417 also known as:
+A guide to constructing hydrophones and hydrophone arrays for monitoring marine mammal vocalizations,
+describes how to build a single crystal hydrophone.
+
+It's sensitivity is around -150 to -160 dB-V//microPa. 
+
+The problem is that the opamp used in the mentioned document is not suitable for the +5Volt DC voltage a USB connector delivers.
+
+Suitable opamps for single +5Volt is a LME49724.
+
+Also, the hydrophone will need to be modified so it doesn't rotate, or a MPU-6050 added to detect X and Y axis values. A GY-521 breakout board could be useful in those regards or a MPU-9150 Accelerometer + Gyro + Magnetometer (compass).
+
+If multiple sensor pods is used, those sensors could be useful as the position of the pods will change in respect to each other and the speed the array is towed at. 
+
+ Multiple sensor pods will enable: 
+The possible to implement distance calculation  in the software if hydrophone pods with enough distance between them are used and sensors as described below is fitted (including the X,and Y axis.
+Approximate values for fresh water and seawater, respectively, at atmospheric pressure are 1450 around 1500 m/s.
+
+ The speed of sound in water increases with increasing pressure, temperature and salinity.
+If sensors that measures pressure, temperature and salinity is used to calculate the speed of sound in the water surrounding the hydrophones and  maximum rate of sampling is used, (192kHz, that is 192,000 times per second). 
+
+I think it should be possible to calculate the distance to sound sources based upon those factors, and the known distance between two pods.
+
+That should be interesting to those who monitors marine mammals.
 I don't know if a AGC circuit is a good idea to implement,to avoid overloading the circuit.
 Automatic gain control (AGC), is a closed-loop feedback regulating circuit in an amplifier or chain of amplifiers, the purpose of which is to maintain a suitable signal amplitude at its output, despite variation of the signal amplitude at the input. The average or peak output signal level is used to dynamically adjust the gain of the amplifiers, enabling the circuit to work satisfactorily with a greater range of input signal levels.
 Perhaps also a tilt sensor, if multiple sensor pods is used as the position of the pods will change in respect to each other and the speed the array is towed at.
@@ -33,15 +60,18 @@ https://youtu.be/n7y2rLAnd5I
 About the software:
 That software is used in robotics to to perform sound source localization, tracking, separation and post-filtering. It can do elevation ( +90 to -90 degrees) and azimuth ( +180 to -180 degrees). 
 
-It cannot do distance calculations, but it should be possible to implement that in the software if hydrophone pods with enough distance between them are used and sensors as described below is fitted.
+It cannot do distance calculations yet, but it should be possible to implement that in the software if hydrophone pods with enough distance between them are used and sensors as described below is fitted.
 Approximate values for fresh water and seawater, respectively, at atmospheric pressure are 1450 around 1500 m/s.
- The speed of sound in water increases with increasing pressure, temperature and salinity.
+The speed of sound in water increases with increasing pressure, temperature and salinity.
 If sensors that measures pressure, temperature and salinity is used to calculate the speed of sound in the water surrounding the hydrophones and  maximum rate of sampling is used, (192kHz, that is 192,000 times per second). I think it should be possible to calculate the distance to sound sources based upon those factors.
 
 The open source hardware is called 8SoundsUSB or 16SoundsUSB.
 https://sourceforge.net/projects/eightsoundsusb/
 https://github.com/introlab/16SoundsUSB
 
+
+The reqired preamp/buffer circut is located here:
+https://github.com/Supermagnum/xSoundsMicrophones/tree/master/Hardware/Microphone-piezo
 
 
 
