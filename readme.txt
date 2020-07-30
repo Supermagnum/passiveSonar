@@ -21,7 +21,7 @@ Because the piezo disc has a very high impedance (1 MΩ typical), it should be b
 The best piezoelectric sensors for listening is based on Aluminum Nitride and molybdenum. PZT-5 also known as SensorTech BM500,Channel 5500,Morgan PZT5A1 is widely used and more easily obtained. 
 
 
-Also, the hydrophone will need to be modified so it doesn't rotate, or a MPU-6050 added per array to detect X and Y axis values. A GY-521 breakout board could be useful in those regards or a MPU-9150 Accelerometer + Gyro + Magnetometer (compass).
+Also, the hydrophone will need to be modified so it doesn't rotate, or a MPU-6050 added per array to detect X,Y and Z axis values. A GY-521 breakout board could be useful in those regards or a MPU-9150 Accelerometer + Gyro + Magnetometer (compass).
 Passive towed hydrophone arrays in submarines monitors the bend and sag automatically.
 
 If multiple sensor pods is used, those sensors could be useful as the position of the pods will change in respect to each other and the speed the array is towed at. 
