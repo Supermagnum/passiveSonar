@@ -28,7 +28,7 @@ If multiple sensor pods is used, those sensors could be useful as the position o
 
 Multiple sensor pods will enable: 
 The possible to implement distance calculation  in the software if hydrophone pods with enough distance between them are used and sensors as described below is fitted (including the X,and Y axis.
-Approximate values for fresh water and seawater, respectively, at atmospheric pressure are 1450 around 1500 m/s.
+Approximate values for fresh water and seawater, respectively, at atmospheric pressure are 1450 to around 1500 m/s.
 
 The speed of sound in water increases with increasing pressure, temperature and salinity.
 If sensors that measures pressure, temperature and salinity is used to calculate the speed of sound in the water surrounding the hydrophones and  maximum rate of sampling is used, (192kHz, that is 192,000 times per second). 
