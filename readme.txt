@@ -35,7 +35,7 @@ If sensors that measures pressure, temperature and salinity is used to calculate
 
 I think it should be possible to calculate the distance to sound sources based upon those factors, and the known distance between two pods.
 
-Multilateration/Triangulation software fiction will probably be the best,
+Multilateration/Triangulation software function will probably be the best,
 as the position of the circular hydrophone arrays are known because the length between them can be 60 meters.
 The software will then do basic triangulation and Multilateration based on the arrival time of the signal.
 
