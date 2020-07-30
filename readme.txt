@@ -35,6 +35,11 @@ If sensors that measures pressure, temperature and salinity is used to calculate
 
 I think it should be possible to calculate the distance to sound sources based upon those factors, and the known distance between two pods.
 
+Multilateration/Triangulation software fiction will probably be the best,
+as the position of the circular hydrophone arrays are known because the length between them can be 60 meters.
+The software will then do basic triangulation and Multilateration based on the arrival time of the signal.
+
+
 That should be interesting to those who monitors marine mammals.
 I don't know if a AGC circuit is a good idea to implement,to avoid overloading the circuit.
 Automatic gain control (AGC), is a closed-loop feedback regulating circuit in an amplifier or chain of amplifiers, the purpose of which is to maintain a suitable signal amplitude at its output, despite variation of the signal amplitude at the input. The average or peak output signal level is used to dynamically adjust the gain of the amplifiers, enabling the circuit to work satisfactorily with a greater range of input signal levels.
@@ -48,6 +53,7 @@ https://youtu.be/n7y2rLAnd5I
 
 About the software:
 That software is used in robotics to to perform sound source localization, tracking, separation and post-filtering. It can do elevation ( +90 to -90 degrees) and azimuth ( +180 to -180 degrees). 
+I am unsure if multiple 8soundsUSB or 16soundsUSB soundcards is supported in the software.
 
 It cannot do distance calculations yet, but it should be possible to implement that in the software if hydrophone pods with enough distance between them are used and sensors as described below is fitted. Input from a couple of MPU-6050's or similar is also not implemented in the software.
 Approximate values for fresh water and seawater, respectively, at atmospheric pressure are 1450 around 1500 m/s.
@@ -57,6 +63,8 @@ If sensors that measures pressure, temperature and salinity is used to calculate
 The open source hardware is called 8SoundsUSB or 16SoundsUSB.
 https://sourceforge.net/projects/eightsoundsusb/
 https://github.com/introlab/16SoundsUSB
+If multiple sound cards are used, I think that their sampling clock needs to be synchronised.
+
 
 
 The reqired preamp/buffer circut is located here:
